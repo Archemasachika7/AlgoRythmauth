@@ -3,119 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeAuth - Developer Authentication</title>
-    <link rel="stylesheet" href="auth-3d.css">
+    <title>AlgoRhythm - Authentication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="algorhythm-auth.css">
 </head>
 <body>
-    <div class="animated-background">
-        <div class="code-rain"></div>
-        <div class="floating-elements">
-            <span class="code-symbol">{</span>
-            <span class="code-symbol">}</span>
-            <span class="code-symbol">&lt;/&gt;</span>
-            <span class="code-symbol">( )</span>
-            <span class="code-symbol">[ ]</span>
-        </div>
+    <!-- Background blobs matching your main theme -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <!-- Cursor follower -->
+    <div class="cursor-follower"></div>
+    
+    <!-- Animated code rain background -->
+    <div class="code-matrix">
+        <div class="matrix-column" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="matrix-column" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="matrix-column" style="left: 30%; animation-delay: 2s;"></div>
+        <div class="matrix-column" style="left: 40%; animation-delay: 3s;"></div>
+        <div class="matrix-column" style="left: 50%; animation-delay: 4s;"></div>
+        <div class="matrix-column" style="left: 60%; animation-delay: 1.5s;"></div>
+        <div class="matrix-column" style="left: 70%; animation-delay: 2.5s;"></div>
+        <div class="matrix-column" style="left: 80%; animation-delay: 3.5s;"></div>
+        <div class="matrix-column" style="left: 90%; animation-delay: 0.5s;"></div>
     </div>
 
-    <div class="container">
+    <div class="container reveal-zoom">
+        <!-- Logo Header -->
+        <div class="auth-header">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+                    <span class="text-xl font-bold text-gray-900">AR</span>
+                </div>
+                <h1 class="text-2xl font-bold text-gradient">AlgoRhythm</h1>
+            </div>
+        </div>
+
         <div class="form-container">
             <!-- Sign In Form -->
-            <div class="form-box signin">
-                <h2>Sign In</h2>
-                <p>Access your developer workspace</p>
-                <form>
-                    <div class="input-group">
-                        <input type="email" placeholder="Email" required>
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="input-group">
-                        <input type="password" placeholder="Password" required>
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="forgot-password">
-                        <a href="#">Forgot Password?</a>
-                    </div>
-                    <button type="submit" class="auth-btn">Sign In</button>
-                    <div class="social-login">
-                        <button class="social-btn github">
-                            <i class="fab fa-github"></i> GitHub
+            <div class="form-box signin glass tile">
+                <div class="tile-glow"></div>
+                <div class="form-content reveal-left">
+                    <h2 class="text-3xl font-bold mb-2">Welcome Back</h2>
+                    <p class="text-gray-400 mb-8">Sign in to continue your coding journey</p>
+                    
+                    <form class="space-y-6">
+                        <div class="input-group">
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" placeholder="Email address" required class="auth-input">
+                                <div class="input-glow"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" placeholder="Password" required class="auth-input">
+                                <div class="input-glow"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="checkbox" class="auth-checkbox">
+                                <span class="text-sm text-gray-400">Remember me</span>
+                            </label>
+                            <a href="#" class="text-sm text-amber-400 hover:text-amber-300 transition-colors">
+                                Forgot password?
+                            </a>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full cta-glow">
+                            <span class="relative z-10">Sign In</span>
                         </button>
-                        <button class="social-btn google">
-                            <i class="fab fa-google"></i> Google
-                        </button>
-                    </div>
-                </form>
+                        
+                        <div class="divider">
+                            <span>Or continue with</span>
+                        </div>
+                        
+                        <div class="social-auth">
+                            <button class="social-btn github-btn">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </button>
+                            <button class="social-btn google-btn">
+                                <i class="fab fa-google"></i>
+                                <span>Google</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             <!-- Sign Up Form -->
-            <div class="form-box signup">
-                <h2>Create Account</h2>
-                <p>Join the developer community</p>
-                <form>
-                    <div class="input-group">
-                        <input type="text" placeholder="Full Name" required>
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="input-group">
-                        <input type="email" placeholder="Email" required>
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="input-group">
-                        <input type="password" placeholder="Password" required>
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="input-group">
-                        <input type="password" placeholder="Confirm Password" required>
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <button type="submit" class="auth-btn">Create Account</button>
-                    <div class="social-login">
-                        <button class="social-btn github">
-                            <i class="fab fa-github"></i> GitHub
+            <div class="form-box signup glass tile">
+                <div class="tile-glow"></div>
+                <div class="form-content reveal-right">
+                    <h2 class="text-3xl font-bold mb-2">Join AlgoRhythm</h2>
+                    <p class="text-gray-400 mb-8">Create your developer account</p>
+                    
+                    <form class="space-y-6">
+                        <div class="input-group">
+                            <div class="input-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" placeholder="Full name" required class="auth-input">
+                                <div class="input-glow"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" placeholder="Email address" required class="auth-input">
+                                <div class="input-glow"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" placeholder="Password" required class="auth-input">
+                                <div class="input-glow"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-wrapper">
+                                <i class="fas fa-shield-alt input-icon"></i>
+                                <input type="password" placeholder="Confirm password" required class="auth-input">
+                                <div class="input-glow"></div>
+                            </div>
+                        </div>
+                        
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="checkbox" class="auth-checkbox mt-1" required>
+                            <span class="text-sm text-gray-400 leading-relaxed">
+                                I agree to the <a href="#" class="text-amber-400 hover:text-amber-300">Terms of Service</a> 
+                                and <a href="#" class="text-amber-400 hover:text-amber-300">Privacy Policy</a>
+                            </span>
+                        </label>
+                        
+                        <button type="submit" class="btn-primary w-full cta-glow">
+                            <span class="relative z-10">Create Account</span>
                         </button>
-                        <button class="social-btn google">
-                            <i class="fab fa-google"></i> Google
-                        </button>
-                    </div>
-                </form>
+                        
+                        <div class="divider">
+                            <span>Or continue with</span>
+                        </div>
+                        
+                        <div class="social-auth">
+                            <button class="social-btn github-btn">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </button>
+                            <button class="social-btn google-btn">
+                                <i class="fab fa-google"></i>
+                                <span>Google</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
-        <!-- Toggle Panel -->
+        <!-- Toggle Panels -->
         <div class="toggle-container">
-            <div class="toggle-panel left-panel">
-                <div class="content">
-                    <h3>New to CodeAuth?</h3>
-                    <p>Join our community of developers and start building amazing projects together!</p>
-                    <div class="code-snippet">
-                        <code>
-                            const user = new Developer();<br>
-                            user.signup();<br>
-                            user.startCoding();
-                        </code>
+            <div class="toggle-panel left-panel glass">
+                <div class="panel-content reveal stagger-1">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="control red"></span>
+                                <span class="control yellow"></span>
+                                <span class="control green"></span>
+                            </div>
+                            <span class="window-title">welcome.js</span>
+                        </div>
+                        <div class="window-content">
+                            <code class="code-snippet">
+<span class="code-comment">// Join the community</span>
+<span class="code-keyword">const</span> <span class="code-variable">developer</span> = <span class="code-keyword">new</span> <span class="code-class">AlgoRhythm</span>.<span class="code-method">User</span>();
+
+<span class="code-keyword">await</span> developer.<span class="code-method">signup</span>({
+  <span class="code-property">platform</span>: <span class="code-string">'AlgoRhythm'</span>,
+  <span class="code-property">journey</span>: <span class="code-string">'coding-excellence'</span>
+});
+
+developer.<span class="code-method">startCoding</span>();
+                            </code>
+                        </div>
                     </div>
-                    <button class="transparent-btn" id="sign-up-btn">Sign Up</button>
+                    <h3 class="text-2xl font-bold mb-4 text-gradient">New to AlgoRhythm?</h3>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        Join thousands of developers solving algorithmic challenges, 
+                        collaborating on projects, and advancing their coding skills.
+                    </p>
+                    <button class="btn-ghost" id="sign-up-btn">
+                        <span>Create Account</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
             </div>
-            <div class="toggle-panel right-panel">
-                <div class="content">
-                    <h3>Welcome Back!</h3>
-                    <p>Sign in to continue your coding journey and access your projects.</p>
-                    <div class="code-snippet">
-                        <code>
-                            if (user.isAuthenticated()) {<br>
-                            &nbsp;&nbsp;user.accessWorkspace();<br>
-                            }
-                        </code>
+            
+            <div class="toggle-panel right-panel glass">
+                <div class="panel-content reveal stagger-2">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="control red"></span>
+                                <span class="control yellow"></span>
+                                <span class="control green"></span>
+                            </div>
+                            <span class="window-title">auth.js</span>
+                        </div>
+                        <div class="window-content">
+                            <code class="code-snippet">
+<span class="code-comment">// Welcome back!</span>
+<span class="code-keyword">if</span> (user.<span class="code-method">isAuthenticated</span>()) {
+  workspace.<span class="code-method">load</span>();
+  challenges.<span class="code-method">resume</span>();
+  
+  <span class="code-keyword">return</span> <span class="code-string">'Ready to code!'</span>;
+}
+                            </code>
+                        </div>
                     </div>
-                    <button class="transparent-btn" id="sign-in-btn">Sign In</button>
+                    <h3 class="text-2xl font-bold mb-4 text-gradient">Welcome Back!</h3>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        Sign in to access your workspace, continue solving challenges, 
+                        and connect with the developer community.
+                    </p>
+                    <button class="btn-ghost" id="sign-in-btn">
+                        <span>Sign In</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="auth-3d.js"></script>
+    <script src="algorhythm-auth.js"></script>
 </body>
 </html>
