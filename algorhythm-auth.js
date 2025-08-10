@@ -1,9 +1,11 @@
-// Simple and working sliding animation
+// Enhanced JavaScript with multiple trigger points for transitions
 const container = document.querySelector('.container');
-const registerBtns = document.querySelectorAll('.register-btn');
-const loginBtns = document.querySelectorAll('.login-btn');
 
-// Switch to signup
+// Get all buttons and links that can trigger transitions
+const registerBtns = document.querySelectorAll('.register-btn'); // Panel button + form link
+const loginBtns = document.querySelectorAll('.login-btn'); // Panel button + form link
+
+// Toggle to Sign Up mode
 registerBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -12,7 +14,7 @@ registerBtns.forEach(btn => {
     });
 });
 
-// Switch to signin
+// Toggle to Sign In mode
 loginBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -21,17 +23,19 @@ loginBtns.forEach(btn => {
     });
 });
 
-// Transition particle effect
+// Create particle effect during transition
 function createTransitionEffect() {
-    const symbols = ['🎵', '♪', '♫', '🎶', '{', '}', '(', ')'];
+    const particles = [];
+    const codeSymbols = ['{', '}', '(', ')', '[', ']', '<', '>', '/', '\\', '=', '+'];
     
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 15; i++) {
         const particle = document.createElement('div');
-        particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        particle.textContent = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
         particle.style.cssText = `
             position: fixed;
-            font-size: 20px;
-            color: #FF6B35;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: #F59E0B;
             pointer-events: none;
             z-index: 9999;
             left: ${Math.random() * window.innerWidth}px;
@@ -41,31 +45,53 @@ function createTransitionEffect() {
         
         document.body.appendChild(particle);
         
+        // Animate particle
         particle.animate([
             { transform: 'scale(0) rotate(0deg)', opacity: 0 },
             { transform: 'scale(1) rotate(180deg)', opacity: 1 },
             { transform: 'scale(0) rotate(360deg)', opacity: 0 }
         ], {
-            duration: 1500,
+            duration: 1200,
             easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }).onfinish = () => particle.remove();
     }
 }
 
-// Form submissions
+// Cursor follower
+document.addEventListener('mousemove', (e) => {
+    document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
+    document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
+});
+
+// Enhanced input focus effects
+document.querySelectorAll('.input-box input').forEach(input => {
+    input.addEventListener('focus', () => {
+        input.closest('.input-box').classList.add('focused');
+    });
+    
+    input.addEventListener('blur', () => {
+        if (!input.value) {
+            input.closest('.input-box').classList.remove('focused');
+        }
+    });
+});
+
+// Form submissions with loading states
 document.querySelectorAll('form').forEach(form => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const submitBtn = form.querySelector('.submit-btn');
+        const submitBtn = form.querySelector('.btn[type="submit"]');
         const originalText = submitBtn.textContent;
         
-        // Loading state
+        // Show loading state
         submitBtn.innerHTML = `
-            <svg style="animation: spin 1s linear infinite; margin-right: 8px;" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3"/>
-                <path d="M4 12a8 8 0 018-8" stroke="currentColor" stroke-width="2" fill="none"/>
-            </svg>
-            Processing...
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <svg style="animation: spin 1s linear infinite; margin-right: 8px;" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z" opacity=".25"/>
+                    <path d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z"/>
+                </svg>
+                Processing...
+            </div>
         `;
         submitBtn.disabled = true;
         
@@ -73,26 +99,30 @@ document.querySelectorAll('form').forEach(form => {
         setTimeout(() => {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-            showNotification('Success! Welcome to AlgoRhythm!');
+            
+            // Show success message
+            showNotification('Success! Welcome to AlgoRhythm!', 'success');
         }, 2000);
     });
 });
 
 // Notification system
-function showNotification(message) {
+function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
+    const bgColor = type === 'success' ? '#10B981' : type === 'error' ? '#EF4444' : '#3B82F6';
+    
     notification.style.cssText = `
         position: fixed;
         top: 20px;
         right: 20px;
-        background: linear-gradient(135deg, #10B981, #059669);
+        background: ${bgColor};
         color: white;
-        padding: 15px 20px;
-        border-radius: 10px;
+        padding: 12px 24px;
+        border-radius: 8px;
         font-size: 14px;
         font-weight: 500;
         z-index: 10000;
-        box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         transform: translateX(100%);
         transition: transform 0.3s ease;
     `;
@@ -112,12 +142,24 @@ function showNotification(message) {
     }, 3000);
 }
 
-// Add spinner animation
+// Add CSS for spinner animation
 const style = document.createElement('style');
 style.textContent = `
     @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    
+    .input-box.focused input {
+        border-color: #F59E0B;
+        background: rgba(245, 158, 11, 0.1);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.2);
+    }
+    
+    .input-box.focused i {
+        color: #F59E0B;
+        transform: translateY(-50%) scale(1.1);
     }
 `;
 document.head.appendChild(style);
