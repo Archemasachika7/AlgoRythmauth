@@ -5,170 +5,396 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlgoRhythm - Authentication</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="algorhythm-auth.css">
 </head>
 <body>
-    <!-- Background blobs matching your main theme -->
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
+    <!-- Enhanced Background System -->
+    <div class="background-container">
+        <!-- Gradient Blobs -->
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        
+        <!-- Animated Grid -->
+        <div class="grid-overlay"></div>
+        
+        <!-- Floating Code + Music Elements -->
+        <div class="floating-elements">
+            <div class="floating-code">
+                <span data-delay="0">{ }</span>
+                <span data-delay="1">♪</span>
+                <span data-delay="2">( )</span>
+                <span data-delay="3">♫</span>
+                <span data-delay="4">&lt;/&gt;</span>
+                <span data-delay="5">🎵</span>
+                <span data-delay="6">[ ]</span>
+                <span data-delay="7">♬</span>
+                <span data-delay="8">=&gt;</span>
+                <span data-delay="9">🎶</span>
+            </div>
+        </div>
+        
+        <!-- Enhanced Matrix Rain -->
+        <div class="matrix-system">
+            <div class="matrix-column" data-column="0"></div>
+            <div class="matrix-column" data-column="1"></div>
+            <div class="matrix-column" data-column="2"></div>
+            <div class="matrix-column" data-column="3"></div>
+            <div class="matrix-column" data-column="4"></div>
+            <div class="matrix-column" data-column="5"></div>
+            <div class="matrix-column" data-column="6"></div>
+            <div class="matrix-column" data-column="7"></div>
+            <div class="matrix-column" data-column="8"></div>
+        </div>
+    </div>
     
-    <!-- Cursor follower -->
-    <div class="cursor-follower"></div>
-    
-    <!-- Animated code rain background -->
-    <div class="code-matrix">
-        <div class="matrix-column" style="left: 10%; animation-delay: 0s;"></div>
-        <div class="matrix-column" style="left: 20%; animation-delay: 1s;"></div>
-        <div class="matrix-column" style="left: 30%; animation-delay: 2s;"></div>
-        <div class="matrix-column" style="left: 40%; animation-delay: 3s;"></div>
-        <div class="matrix-column" style="left: 50%; animation-delay: 4s;"></div>
-        <div class="matrix-column" style="left: 60%; animation-delay: 1.5s;"></div>
-        <div class="matrix-column" style="left: 70%; animation-delay: 2.5s;"></div>
-        <div class="matrix-column" style="left: 80%; animation-delay: 3.5s;"></div>
-        <div class="matrix-column" style="left: 90%; animation-delay: 0.5s;"></div>
+    <!-- Enhanced Cursor System -->
+    <div class="cursor-system">
+        <div class="cursor-follower primary"></div>
+        <div class="cursor-follower secondary"></div>
+        <div class="cursor-trail"></div>
     </div>
 
-    <div class="container">
-        <!-- Logo Header -->
+    <div class="container modern-container">
+        <!-- Enhanced Logo Header -->
         <div class="auth-header">
-            <div class="flex items-center space-x-3 mb-4">
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
-                    <span class="text-xl font-bold text-gray-900">AR</span>
+            <div class="brand-container">
+                <div class="brand-icon">
+                    <div class="icon-inner">
+                        <span class="icon-text">AR</span>
+                        <div class="icon-glow"></div>
+                    </div>
                 </div>
-                <h1 class="text-2xl font-bold text-gradient">AlgoRhythm</h1>
+                <div class="brand-text">
+                    <h1 class="brand-title">AlgoRhythm</h1>
+                    <p class="brand-subtitle">Code • Create • Innovate</p>
+                </div>
             </div>
         </div>
 
         <!-- Sign In Form (Default) -->
-        <div class="form-box login glass">
-            <form>
-                <h1>Sign In</h1>
-                <p>Welcome back! Sign in to continue your coding journey</p>
-                
-                <div class="input-box">
-                    <input type="email" placeholder="Email" required>
-                    <i class="fas fa-envelope"></i>
+        <div class="form-box login glass-morphism">
+            <div class="form-glow-effect"></div>
+            <form class="auth-form">
+                <div class="form-header">
+                    <h1 class="form-title gradient-text">Welcome Back</h1>
+                    <p class="form-description">Sign in to continue your coding journey</p>
                 </div>
                 
-                <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                    <i class="fas fa-lock"></i>
+                <div class="input-group">
+                    <div class="input-container">
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <input type="email" placeholder="Enter your email" required class="modern-input">
+                        <div class="input-highlight"></div>
+                        <label class="input-label">Email Address</label>
+                    </div>
                 </div>
                 
-                <div class="forgot-link">
-                    <a href="#">Forgot password?</a>
+                <div class="input-group">
+                    <div class="input-container">
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <input type="password" placeholder="Enter your password" required class="modern-input">
+                        <div class="input-highlight"></div>
+                        <label class="input-label">Password</label>
+                        <button type="button" class="password-toggle">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
                 </div>
                 
-                <button type="submit" class="btn">Sign In</button>
-                
-                <!-- ADDED: Signup prompt in signin form -->
-                <div class="signup-prompt">
-                    <p>Don't have an account? <a href="#" class="signup-link register-btn">Sign Up</a></p>
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" class="custom-checkbox">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
                 </div>
                 
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-google"></i></a>
+                <button type="submit" class="primary-button">
+                    <span class="button-text">Sign In</span>
+                    <div class="button-ripple"></div>
+                    <div class="button-glow"></div>
+                </button>
+                
+                <div class="auth-divider">
+                    <span>or continue with</span>
+                </div>
+                
+                <div class="social-auth-grid">
+                    <button class="social-button github-btn" type="button">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                        <div class="social-ripple"></div>
+                    </button>
+                    <button class="social-button google-btn" type="button">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                        <div class="social-ripple"></div>
+                    </button>
+                </div>
+                
+                <div class="auth-prompt">
+                    <p>New to AlgoRhythm? <a href="#" class="auth-link register-btn">Create Account</a></p>
                 </div>
             </form>
         </div>
 
         <!-- Sign Up Form -->
-        <div class="form-box register glass">
-            <form>
-                <h1>Create Account</h1>
-                <p>Join the developer community and start your coding journey</p>
-                
-                <div class="input-box">
-                    <input type="text" placeholder="Full Name" required>
-                    <i class="fas fa-user"></i>
+        <div class="form-box register glass-morphism">
+            <div class="form-glow-effect"></div>
+            <form class="auth-form">
+                <div class="form-header">
+                    <h1 class="form-title gradient-text">Join AlgoRhythm</h1>
+                    <p class="form-description">Create your developer account today</p>
                 </div>
                 
-                <div class="input-box">
-                    <input type="email" placeholder="Email" required>
-                    <i class="fas fa-envelope"></i>
+                <div class="input-group">
+                    <div class="input-container">
+                        <div class="input-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <input type="text" placeholder="Enter your full name" required class="modern-input">
+                        <div class="input-highlight"></div>
+                        <label class="input-label">Full Name</label>
+                    </div>
                 </div>
                 
-                <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                    <i class="fas fa-lock"></i>
+                <div class="input-group">
+                    <div class="input-container">
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <input type="email" placeholder="Enter your email" required class="modern-input">
+                        <div class="input-highlight"></div>
+                        <label class="input-label">Email Address</label>
+                    </div>
                 </div>
                 
-                <div class="input-box">
-                    <input type="password" placeholder="Confirm Password" required>
-                    <i class="fas fa-shield-alt"></i>
+                <div class="input-group">
+                    <div class="input-container">
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <input type="password" placeholder="Create a password" required class="modern-input">
+                        <div class="input-highlight"></div>
+                        <label class="input-label">Password</label>
+                        <button type="button" class="password-toggle">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
                 </div>
                 
-                <button type="submit" class="btn">Create Account</button>
-                
-                <!-- ADDED: Signin prompt in signup form -->
-                <div class="signin-prompt">
-                    <p>Already have an account? <a href="#" class="signin-link login-btn">Sign In</a></p>
+                <div class="input-group">
+                    <div class="input-container">
+                        <div class="input-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <input type="password" placeholder="Confirm your password" required class="modern-input">
+                        <div class="input-highlight"></div>
+                        <label class="input-label">Confirm Password</label>
+                    </div>
                 </div>
                 
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-google"></i></a>
+                <div class="form-options">
+                    <label class="checkbox-container full-width">
+                        <input type="checkbox" class="custom-checkbox" required>
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="terms-link">Privacy Policy</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="primary-button">
+                    <span class="button-text">Create Account</span>
+                    <div class="button-ripple"></div>
+                    <div class="button-glow"></div>
+                </button>
+                
+                <div class="auth-divider">
+                    <span>or continue with</span>
+                </div>
+                
+                <div class="social-auth-grid">
+                    <button class="social-button github-btn" type="button">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                        <div class="social-ripple"></div>
+                    </button>
+                    <button class="social-button google-btn" type="button">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                        <div class="social-ripple"></div>
+                    </button>
+                </div>
+                
+                <div class="auth-prompt">
+                    <p>Already have an account? <a href="#" class="auth-link login-btn">Sign In</a></p>
                 </div>
             </form>
         </div>
 
-        <!-- Toggle Box (Sliding Panel) -->
-        <div class="toggle-box">
-            <!-- Left Panel (Shows when in Sign Up mode) -->
-            <div class="toggle-panel toggle-left">
-                <div class="code-window">
-                    <div class="window-header">
-                        <div class="window-controls">
-                            <span class="control red"></span>
-                            <span class="control yellow"></span>
-                            <span class="control green"></span>
+        <!-- Enhanced Toggle Panels -->
+        <div class="toggle-system">
+            <div class="toggle-background"></div>
+            
+            <!-- Welcome Back Panel -->
+            <div class="toggle-panel panel-left">
+                <div class="panel-content">
+                    <div class="code-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control red"></span>
+                                <span class="control yellow"></span>
+                                <span class="control green"></span>
+                            </div>
+                            <div class="terminal-title">
+                                <i class="fas fa-terminal"></i>
+                                <span>welcome.js</span>
+                            </div>
                         </div>
-                        <span class="window-title">welcome.js</span>
+                        <div class="terminal-content">
+                            <div class="code-block">
+                                <div class="code-line">
+                                    <span class="line-number">1</span>
+                                    <span class="code-comment">// Welcome back developer! 🎵</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">2</span>
+                                    <span class="code-keyword">if</span> <span class="code-bracket">(</span><span class="code-variable">user</span><span class="code-operator">.</span><span class="code-method">isAuthenticated</span><span class="code-bracket">())</span> <span class="code-bracket">{</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">3</span>
+                                    <span class="code-indent">  </span><span class="code-variable">workspace</span><span class="code-operator">.</span><span class="code-method">load</span><span class="code-bracket">();</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">4</span>
+                                    <span class="code-indent">  </span><span class="code-variable">music</span><span class="code-operator">.</span><span class="code-method">play</span><span class="code-bracket">(</span><span class="code-string">'coding-vibes'</span><span class="code-bracket">);</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">5</span>
+                                    <span class="code-bracket">}</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="window-content">
-                        <code class="code-snippet">
-<span class="code-comment">// Welcome back!</span>
-<span class="code-keyword">if</span> (user.<span class="code-method">isAuthenticated</span>()) {
-  workspace.<span class="code-method">load</span>();
-  challenges.<span class="code-method">resume</span>();
-  
-  <span class="code-keyword">return</span> <span class="code-string">'Ready to code!'</span>;
-}
-                        </code>
+                    
+                    <div class="panel-text">
+                        <h2 class="panel-title">Welcome Back, Developer!</h2>
+                        <p class="panel-description">Ready to continue your coding symphony? Sign in to access your workspace and resume your creative journey.</p>
+                        
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <i class="fas fa-code"></i>
+                                <span>Your Projects</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-music"></i>
+                                <span>Coding Playlists</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>Achievements</span>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <button class="panel-button login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Sign In</span>
+                        <div class="panel-button-glow"></div>
+                    </button>
                 </div>
-                <h1>Welcome Back!</h1>
-                <p>Sign in to access your workspace and continue your coding challenges</p>
-                <button class="btn login-btn">Sign In</button>
             </div>
             
-            <!-- Right Panel (Shows by default) -->
-            <div class="toggle-panel toggle-right">
-                <div class="code-window">
-                    <div class="window-header">
-                        <div class="window-controls">
-                            <span class="control red"></span>
-                            <span class="control yellow"></span>
-                            <span class="control green"></span>
+            <!-- Join Community Panel -->
+            <div class="toggle-panel panel-right">
+                <div class="panel-content">
+                    <div class="code-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control red"></span>
+                                <span class="control yellow"></span>
+                                <span class="control green"></span>
+                            </div>
+                            <div class="terminal-title">
+                                <i class="fas fa-terminal"></i>
+                                <span>join.js</span>
+                            </div>
                         </div>
-                        <span class="window-title">signup.js</span>
+                        <div class="terminal-content">
+                            <div class="code-block">
+                                <div class="code-line">
+                                    <span class="line-number">1</span>
+                                    <span class="code-comment">// Join the rhythm! 🎶</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">2</span>
+                                    <span class="code-keyword">const</span> <span class="code-variable">developer</span> <span class="code-operator">=</span> <span class="code-keyword">new</span> <span class="code-class">AlgoRhythm</span><span class="code-operator">.</span><span class="code-method">User</span><span class="code-bracket">();</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">3</span>
+                                    <span class="code-keyword">await</span> <span class="code-variable">developer</span><span class="code-operator">.</span><span class="code-method">signup</span><span class="code-bracket">();</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">4</span>
+                                    <span class="code-variable">community</span><span class="code-operator">.</span><span class="code-method">welcome</span><span class="code-bracket">(</span><span class="code-variable">developer</span><span class="code-bracket">);</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">5</span>
+                                    <span class="code-variable">developer</span><span class="code-operator">.</span><span class="code-method">startCoding</span><span class="code-bracket">();</span> <span class="code-comment">// 🚀</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="window-content">
-                        <code class="code-snippet">
-<span class="code-comment">// Join the community</span>
-<span class="code-keyword">const</span> <span class="code-variable">developer</span> = <span class="code-keyword">new</span> <span class="code-class">AlgoRhythm</span>.<span class="code-method">User</span>();
-
-<span class="code-keyword">await</span> developer.<span class="code-method">signup</span>();
-developer.<span class="code-method">startCoding</span>();
-                        </code>
+                    
+                    <div class="panel-text">
+                        <h2 class="panel-title">New to AlgoRhythm?</h2>
+                        <p class="panel-description">Join thousands of developers creating the future through code and creativity. Your coding symphony starts here.</p>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">50K+</div>
+                                <div class="stat-label">Developers</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">1M+</div>
+                                <div class="stat-label">Problems Solved</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Community</div>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <button class="panel-button register-btn">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Join Now</span>
+                        <div class="panel-button-glow"></div>
+                    </button>
                 </div>
-                <h1>New to AlgoRhythm?</h1>
-                <p>Create your account and join thousands of developers in coding excellence</p>
-                <button class="btn register-btn">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="logo-animation">
+                    <span>AR</span>
+                </div>
+            </div>
+            <div class="loading-text">Loading AlgoRhythm...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
             </div>
         </div>
     </div>
