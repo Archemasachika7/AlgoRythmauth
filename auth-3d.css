@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAuth - Developer Authentication</title>
+    <link rel="stylesheet" href="auth-3d.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="animated-background">
+        <div class="code-rain"></div>
+        <div class="floating-elements">
+            <span class="code-symbol">{</span>
+            <span class="code-symbol">}</span>
+            <span class="code-symbol">&lt;/&gt;</span>
+            <span class="code-symbol">( )</span>
+            <span class="code-symbol">[ ]</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <!-- Sign In Form -->
+            <div class="form-box signin">
+                <h2>Sign In</h2>
+                <p>Access your developer workspace</p>
+                <form>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="auth-btn">Sign In</button>
+                    <div class="social-login">
+                        <button class="social-btn github">
+                            <i class="fab fa-github"></i> GitHub
+                        </button>
+                        <button class="social-btn google">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div class="form-box signup">
+                <h2>Create Account</h2>
+                <p>Join the developer community</p>
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="Full Name" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Confirm Password" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <button type="submit" class="auth-btn">Create Account</button>
+                    <div class="social-login">
+                        <button class="social-btn github">
+                            <i class="fab fa-github"></i> GitHub
+                        </button>
+                        <button class="social-btn google">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Toggle Panel -->
+        <div class="toggle-container">
+            <div class="toggle-panel left-panel">
+                <div class="content">
+                    <h3>New to CodeAuth?</h3>
+                    <p>Join our community of developers and start building amazing projects together!</p>
+                    <div class="code-snippet">
+                        <code>
+                            const user = new Developer();<br>
+                            user.signup();<br>
+                            user.startCoding();
+                        </code>
+                    </div>
+                    <button class="transparent-btn" id="sign-up-btn">Sign Up</button>
+                </div>
+            </div>
+            <div class="toggle-panel right-panel">
+                <div class="content">
+                    <h3>Welcome Back!</h3>
+                    <p>Sign in to continue your coding journey and access your projects.</p>
+                    <div class="code-snippet">
+                        <code>
+                            if (user.isAuthenticated()) {<br>
+                            &nbsp;&nbsp;user.accessWorkspace();<br>
+                            }
+                        </code>
+                    </div>
+                    <button class="transparent-btn" id="sign-in-btn">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth-3d.js"></script>
+</body>
+</html>
