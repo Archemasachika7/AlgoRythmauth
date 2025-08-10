@@ -551,3 +551,39 @@ form {
         animation: none !important;
     }
 }
+/* Signup/Signin prompt styling */
+.signup-prompt, .signin-prompt {
+    margin: 15px 0 20px 0;
+    text-align: center;
+}
+
+.signup-prompt p, .signin-prompt p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.signup-link, .signin-link {
+    color: #F59E0B !important;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.signup-link:hover, .signin-link:hover {
+    color: #FBBF24 !important;
+    border-bottom-color: #FBBF24;
+    transform: translateY(-1px);
+}
+
+/* Adjust spacing for better layout */
+.social-icons {
+    margin-top: 15px;
+}
+
+/* Enhanced button hover effects */
+.signup-link:active, .signin-link:active {
+    transform: translateY(0);
+}
